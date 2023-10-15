@@ -18,13 +18,13 @@ app.use(express.json());
 //   })
 // );
 app.use((req, res, next) => {
-  res.setHeader(
+  res.header(
     "Access-Control-Allow-Origin",
     "https://login-register-technical-question-sooty.vercel.app"
   );
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "POST, GET");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
 
