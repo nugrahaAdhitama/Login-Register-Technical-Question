@@ -20,7 +20,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  "Hello World";
+  res.json("Hello World");
 });
 
 app.post("/register", (req, res) => {
