@@ -27,7 +27,7 @@ function Signup() {
     e.preventDefault();
     axios
       .post(
-        "login-register-techniclogin-register-technical-question-api.vercel.app/register",
+        "https://login-register-technical-question-api.vercel.app/register",
         {
           name,
           email,

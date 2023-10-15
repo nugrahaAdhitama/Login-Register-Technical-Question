@@ -26,13 +26,10 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(
-        "login-register-techniclogin-register-technical-question-api.vercel.applogin",
-        {
-          email,
-          password,
-        }
-      )
+      .post("https://login-register-technical-question-api.vercel.app/login", {
+        email,
+        password,
+      })
       .then((res) => {
         console.log(res.data);
         setUser(res.data.user);
