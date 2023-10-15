@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const UserModel = require("./models/User");
 
 mongoose.connect(
-  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority"
 );
 
 const app = express();
@@ -39,6 +39,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://login-register-technical-question-sooty.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
   const { email, password } = req.body;
 
   // Check if email is already registered
@@ -66,6 +74,14 @@ app.post("/register", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://login-register-technical-question-sooty.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
   const { email, password } = req.body;
 
   UserModel.findOne({ email: email }).then((user) => {
