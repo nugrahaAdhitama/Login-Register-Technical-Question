@@ -6,19 +6,21 @@ const UserModel = require("./models/User");
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-  {
-    origin: [""],
+app.use(
+  cors({
+    origin: ["https://login-register-technical-question-sooty.vercel.app/"],
     methods: ["POST", "GET"],
-    credentials: true
-  }
-));
+    credentials: true,
+  })
+);
 
-mongoose.connect("mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect(
+  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority"
+);
 
 app.get("/", (req, res) => {
   res.json("Hello");
-})
+});
 
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
