@@ -25,7 +25,10 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("https://login-register-technical-question.vercel.app/login", {
+        email,
+        password,
+      })
       .then((res) => {
         console.log(res.data);
         setUser(res.data.user);
