@@ -4,18 +4,19 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const UserModel = require("./models/User");
 
+mongoose.connect(
+  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority"
+);
+
 const app = express();
 app.use(express.json());
+
 app.use(
   cors({
     origin: "https://login-register-technical-question-sooty.vercel.app",
     methods: ["POST", "GET"],
     credentials: true,
   })
-);
-
-mongoose.connect(
-  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority"
 );
 
 app.post("/register", (req, res) => {
