@@ -18,10 +18,6 @@ mongoose.connect(
   "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority"
 );
 
-app.get("/", (req, res) => {
-  res.json("Hello");
-});
-
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
 
