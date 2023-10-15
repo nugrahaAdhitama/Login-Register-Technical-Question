@@ -19,6 +19,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  "Hello World";
+});
+
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
 
