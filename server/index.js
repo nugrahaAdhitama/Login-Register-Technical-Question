@@ -38,17 +38,17 @@ app.use(cors());
 // });
 
 app.get("/", (req, res) => {
-  res.json("Hello World");
+  res.json("Hello World!");
 });
 
 app.post("/register", (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://login-register-technical-question-sooty.vercel.app"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
+  // res.setHeader(
+  //   "Access-Control-Allow-Origin",
+  //   "https://login-register-technical-question-sooty.vercel.app"
+  // );
+  // res.setHeader("Access-Control-Allow-Methods", "POST, GET");
+  // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  // res.setHeader("Access-Control-Allow-Credentials", "true");
 
   const { email, password } = req.body;
 
