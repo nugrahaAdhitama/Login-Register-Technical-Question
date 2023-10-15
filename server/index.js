@@ -14,7 +14,7 @@ app.use(cors(
   }
 ));
 
-mongoose.connect("mongodb://127.0.0.1:27017/User");
+mongoose.connect("mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority");
 
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
