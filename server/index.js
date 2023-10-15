@@ -10,7 +10,7 @@ app.use(cors(
   {
     origin: [""],
     methods: ["POST", "GET"],
-    crededentials: true
+    credentials: true
   }
 ));
 
