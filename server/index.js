@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const UserModel = require("./models/User");
 
 mongoose.connect(
-  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/test?retryWrites=true&w=majority"
+  "mongodb+srv://nugrahaadhitama22:rahasia@cluster0.erbr00v.mongodb.net/?retryWrites=true&w=majority"
 );
 
 const app = express();
