@@ -11,17 +11,12 @@ mongoose.connect(
 const app = express();
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "https://login-register-technical-question-sooty.vercel.app",
-    credentials: true,
-  })
-);
-
-app.get("/", (req, res) => {
-  res.json("Hello World");
-});
-
+// app.use(
+//   cors({
+//     origin: "https://login-register-technical-question-sooty.vercel.app",
+//     credentials: true,
+//   })
+// );
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
@@ -31,6 +26,10 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   next();
+});
+
+app.get("/", (req, res) => {
+  res.json("Hello World");
 });
 
 app.post("/register", (req, res) => {
