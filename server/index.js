@@ -6,7 +6,13 @@ const UserModel = require("./models/User");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["POST", "GET"],
+    crededentials: true
+  }
+));
 
 mongoose.connect("mongodb://127.0.0.1:27017/User");
 
